@@ -222,8 +222,8 @@ void tempCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   char outVal[9];
   dtostrf(value.getFloat(), 6, 1, outVal);
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, outVal);  
 }
 
@@ -232,8 +232,8 @@ void hoursCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   char outVal[9];
   dtostrf(value.getFloat(), 6, 2, outVal);
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, outVal);  
 }
 
@@ -241,8 +241,8 @@ void hoursCallbackHandler(const IDatapoint& dp, DPValue value) {
 void tempSCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   int nValue = value.getU8();
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, String(nValue).c_str()); 
 }
 
@@ -250,16 +250,16 @@ void tempSCallbackHandler(const IDatapoint& dp, DPValue value) {
 void niveauCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   int8_t nValue = (int8_t)value.getU8();
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, String(nValue).c_str()); 
 }
 
 //DPStat - bool |  MQTT-Topic bsp: VITOWIFI/getbrennerstatus 
 void statCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, (value.getBool()) ? "1" : "0");  
 }
 
@@ -267,8 +267,8 @@ void statCallbackHandler(const IDatapoint& dp, DPValue value) {
 void countCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   int nValue = value.getU32();
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, String(nValue).c_str()); 
 }
 
@@ -277,8 +277,8 @@ void countCallbackHandler(const IDatapoint& dp, DPValue value) {
 void countSCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   int nValue = value.getU16();
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, String(nValue).c_str()); 
 }
 
@@ -287,8 +287,8 @@ void CoPCallbackHandler(const IDatapoint& dp, DPValue value) {
   //Umwandeln, und zum schluss per mqtt publish an mqtt-broker senden
   char outVal[9];
   dtostrf(value.getFloat(), 6, 1, outVal);
-  char outName[30] = "VITOWIFI/";
-  strcpy(outName,dp.getName());
+  char outName[40] = "VITOWIFI/";
+  strcat(outName,dp.getName());
   mqttClient.publish(outName, 1, true, outVal);
 }
 

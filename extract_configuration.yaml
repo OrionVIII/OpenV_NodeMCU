@@ -1,13 +1,13 @@
 light:
   - platform: mqtt
     name: "partymodus"
-    state_topic: "getbetriebpartym1"
+    state_topic: "VITOWIFI/getbetriebpartym1"
     command_topic: "VITOWIFI/setBetriebPartyM1"
     payload_on: "1"
     payload_off: "0"
   - platform: mqtt
     name: "sparmodus"
-    state_topic: "getbetriebsparm1"
+    state_topic: "VITOWIFI/getbetriebsparm1"
     command_topic: "VITOWIFI/setBetriebSparM1"
     payload_on: "1"
     payload_off: "0"
@@ -18,49 +18,49 @@ sensor:
     state_topic: "VITOWIFI/$status/online"
   - platform: mqtt
     name: "sammelstoerung"
-    state_topic: "getalarmstatus"
+    state_topic: "VITOWIFI/getalarmstatus"
   - platform: mqtt
     name: "aussentemperatur"
-    state_topic: "gettempa"
+    state_topic: "VITOWIFI/gettempa"
     unit_of_measurement: "°C"
   - platform: mqtt
     name: "wasserspeicher"
-    state_topic: "gettempwwist"
+    state_topic: "VITOWIFI/gettempwwist"
     unit_of_measurement: "°C"
   - platform: mqtt
     name: "wasserspeichersoll"
-    state_topic: "gettempwwsoll"
+    state_topic: "VITOWIFI/gettempwwsoll"
   - platform: mqtt
     name: "kesseltemperatur"
-    state_topic: "gettempvlistm1"
+    state_topic: "VITOWIFI/gettempvlistm1"
     unit_of_measurement: "°C"
   - platform: mqtt
     name: "heizkreispumpe"
-    state_topic: "gethkpumpem1"
+    state_topic: "VITOWIFI/gethkpumpem1"
   - platform: mqtt
     name: "brennerstatus"
-    state_topic: "getbrennerstatus"
+    state_topic: "VITOWIFI/getbrennerstatus"
   - platform: mqtt
     name: "brennerbetriebsstunden"
-    state_topic: "getbrennerstunden"
+    state_topic: "VITOWIFI/getbrennerstunden"
     unit_of_measurement: "h"
   - platform: mqtt
     name: "brennerstarts"
-    state_topic: "getbrennerstarts"
+    state_topic: "VITOWIFI/getbrennerstarts"
     unit_of_measurement: ""
   - platform: mqtt
     name: "abgastemperatur"
-    state_topic: "gettempabgas"
+    state_topic: "VITOWIFI/gettempabgas"
     unit_of_measurement: "°C"
   - platform: mqtt
     name: "heizkreismodus"
-    state_topic: "getbetriebartm1"
+    state_topic: "VITOWIFI/getbetriebartm1"
   - platform: mqtt
     name: "niveaukennliniea1"
-    state_topic: "getniveaukennliniea1"
+    state_topic: "VITOWIFI/getniveaukennliniea1"
   - platform: mqtt
     name: "neigungkennliniea1"
-    state_topic: "getneigungkennliniea1"
+    state_topic: "VITOWIFI/getneigungkennliniea1"
 
 input_number:
   input_wasserspeicher_soll:
