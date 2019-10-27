@@ -1,0 +1,72 @@
+  - cards:
+      - entities:
+          - entity: sensor.online
+            icon: 'mdi:access-point-network'
+            name: VitoWiFi online
+          - entity: sensor.sammelstoerung
+            icon: 'mdi:alert'
+            name: Sammelstörung
+          - entity: sensor.aussentemperatur
+            icon: 'mdi:thermometer'
+            name: Außentemperatur
+          - entity: sensor.wasserspeicher
+            icon: 'mdi:shower'
+            name: Speichertemperatur
+          - entity: sensor.kesseltemperatur
+            icon: 'mdi:cup-water'
+            name: Kesseltemperatur
+          - entity: sensor.heizkreispumpe
+            icon: 'mdi:buddhism'
+            name: Heizkreispumpe
+          - entity: sensor.abgastemperatur
+            icon: 'mdi:fire'
+            name: Abgastemperatur
+          - entity: sensor.brennerstatus
+            icon: 'mdi:fire'
+            name: Brennerstatus
+          - entity: sensor.brennerbetriebsstunden
+            icon: 'mdi:counter'
+            name: Brenner-Betriebsstunden
+          - entity: sensor.brennerstarts
+            ico0=AUS 1=WW 2=AUTO 3=Red 4=Dauern: 'mdi:restart'
+            name: Brenner-Starts
+        show_header_toggle: false
+        title: Viessmann Vitodens 200-W
+        type: entities
+      - cards:
+          - entities:
+              - entity: light.partymodus
+                icon: 'mdi:glass-wine'
+                name: Partymodus
+              - entity: light.sparmodus
+                icon: 'mdi:piggy-bank'
+                name: Sparmodus
+              - entity: input_number.input_wasserspeicher_soll
+                icon: 'mdi:water-pump'
+                name: Soll-Speichertemperatur
+              - entity: input_number.input_hk1_soll
+                icon: 'mdi:home-thermometer-outline'
+                name: Soll-Temperatur Tag
+              - entity: input_number.input_hk1_red_soll
+                icon: 'mdi:home-thermometer'
+                name: Soll-Temperatur Nacht
+              - entity: input_number.input_neigunga1
+                icon: 'mdi:chart-bell-curve-cumulative'
+                name: Neigung Heizkennlinie
+              - entity: input_number.input_niveaua1
+                icon: 'mdi:chart-bell-curve-cumulative'
+                name: Niveau Heizkennlinie
+              - entity: input_number.input_betriebartm1
+                icon: 'mdi:theme-light-dark'
+                name: Betriebsart
+            show_header_toggle: false
+            title: Parametrierung
+            type: entities
+          - content: |
+              **Betriebsart:**
+              0=AUS 1=Warmwasser 2=AUTO 3=Reduziert 4=Dauerbetrieb
+            type: markdown
+        type: vertical-stack
+    title: Heizung
+    type: horizontal-stack
+

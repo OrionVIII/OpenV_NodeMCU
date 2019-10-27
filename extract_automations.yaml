@@ -1,0 +1,155 @@
+##### Heizung: Setze Wasser Solltemp
+###    10 bis 95°C
+##
+- alias: setze wassertemp soll input
+  trigger:
+    platform: mqtt
+    topic: 'gettempwwsoll'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_wasserspeicher_soll
+      value: "{{ trigger.payload }}"
+- alias: setze wassertemp soll mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_wasserspeicher_soll
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setTempWWsoll'
+      retain: true
+      payload: "{{ states('input_number.input_wasserspeicher_soll') | int }}"
+##
+###
+#####
+
+##### Heizung: Setze HK1 Solltemp
+###   3 bis 37°C
+##
+- alias: setze HK1 Temp Soll input
+  trigger:
+    platform: mqtt
+    topic: 'gettempraumnorsollm1'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_hk1_soll
+      value: "{{ trigger.payload }}"
+- alias: setze HK1 Temp Soll mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_hk1_soll
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setTempRaumNorSollM1'
+      retain: true
+      payload: "{{ states('input_number.input_hk1_soll') | int }}"
+##
+###
+#####
+
+##### Heizung: Setze HK1 Reduziert Solltemp
+###   3 bis 37°C
+##
+- alias: setze HK1 RedTemp Soll input
+  trigger:
+    platform: mqtt
+    topic: 'gettempraumredsollm1'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_hk1_red_soll
+      value: "{{ trigger.payload }}"
+- alias: setze HK1 RedTemp Soll mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_hk1_red_soll
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setTempRaumRedSollM1'
+      retain: true
+      payload: "{{ states('input_number.input_hk1_red_soll') | int }}"
+##
+###
+#####
+
+##### Heizung: Setze BetriebArt
+###   0=Aus  1=WW  2=WW+Heizung  3=DauerReduziert  4=DauerNormal
+##
+- alias: setze BetriebArt input
+  trigger:
+    platform: mqtt
+    topic: 'getbetriebartm1'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_betriebartm1
+      value: "{{ trigger.payload }}"
+- alias: setze BetriebArt mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_betriebartm1
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setBetriebArtM1'
+      retain: true
+      payload: "{{ states('input_number.input_betriebartm1') | int }}"
+##
+###
+#####
+
+##### Heizung: Setze NeigungA1
+###   0,2 bis 3.5
+##
+- alias: setze NeigungA1 input
+  trigger:
+    platform: mqtt
+    topic: 'getneigungkennliniea1'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_neigunga1
+      value: "{{ trigger.payload }}"
+- alias: setze NeigungA1 mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_neigunga1
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setNeigungKennlinieA1'
+      retain: true
+      payload: "{{ states('input_number.input_neigunga1') }}"
+##
+###
+#####
+
+##### Heizung: Setze NiveauA1
+###   -13 bis 40
+##
+- alias: setze NiveauA1 input
+  trigger:
+    platform: mqtt
+    topic: 'getniveaukennliniea1'
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.input_niveaua1
+      value: "{{ trigger.payload }}"
+- alias: setze NiveauA1 mqtt
+  trigger:
+    platform: state
+    entity_id: input_number.input_niveaua1
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: 'VITOWIFI/setNiveauKennlinieA1'
+      retain: true
+      payload: "{{ states('input_number.input_niveaua1') | int }}"
+##
+###
+#####
