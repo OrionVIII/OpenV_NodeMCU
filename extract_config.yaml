@@ -1,0 +1,96 @@
+light:
+  - platform: mqtt
+    name: "partymodus"
+    state_topic: "VITOWIFI/getbetriebpartym1"
+    command_topic: "VITOWIFI/setBetriebPartyM1"
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    name: "sparmodus"
+    state_topic: "VITOWIFI/getbetriebsparm1"
+    command_topic: "VITOWIFI/setBetriebSparM1"
+    payload_on: "1"
+    payload_off: "0"
+
+sensor:
+  - platform: mqtt
+    name: "online"
+    state_topic: "VITOWIFI/$status/online"
+  - platform: mqtt
+    name: "sammelstoerung"
+    state_topic: "VITOWIFI/getalarmstatus"
+  - platform: mqtt
+    name: "aussentemperatur"
+    state_topic: "VITOWIFI/gettempa"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "wasserspeicher"
+    state_topic: "VITOWIFI/gettempwwist"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "wasserspeichersoll"
+    state_topic: "VITOWIFI/gettempwwsoll"
+  - platform: mqtt
+    name: "kesseltemperatur"
+    state_topic: "VITOWIFI/gettempvlistm1"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "heizkreispumpe"
+    state_topic: "VITOWIFI/gethkpumpem1"
+  - platform: mqtt
+    name: "brennerstatus"
+    state_topic: "VITOWIFI/getbrennerstatus"
+  - platform: mqtt
+    name: "brennerbetriebsstunden"
+    state_topic: "VITOWIFI/getbrennerstunden"
+    unit_of_measurement: "h"
+  - platform: mqtt
+    name: "brennerstarts"
+    state_topic: "VITOWIFI/getbrennerstarts"
+    unit_of_measurement: ""
+  - platform: mqtt
+    name: "abgastemperatur"
+    state_topic: "VITOWIFI/gettempabgas"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "heizkreismodus"
+    state_topic: "VITOWIFI/getbetriebartm1"
+  - platform: mqtt
+    name: "niveaukennliniea1"
+    state_topic: "VITOWIFI/getniveaukennliniea1"
+  - platform: mqtt
+    name: "neigungkennliniea1"
+    state_topic: "VITOWIFI/getneigungkennliniea1"
+
+input_number:
+  input_wasserspeicher_soll:
+    name: Wasserspeicher Soll
+    min: 45
+    max: 60
+    step: 1
+  input_hk1_soll:
+    name: Heizkreis Soll
+    min: 3
+    max: 37
+    step: 1
+  input_hk1_red_soll:
+    name: Heizkreis Reduziert Soll
+    min: 3
+    max: 37
+    step: 1
+  input_betriebartm1:
+    name: Betriebsart
+    min: 0
+    max: 4
+    step: 1
+  input_neigunga1:
+    name: Neigung Kennlinie
+    min: 0.2
+    max: 3.5
+    step: 0.1
+  input_niveaua1:
+    name: Niveau Kennlinie
+    min: -13
+    max: 40
+    step: 1
+
