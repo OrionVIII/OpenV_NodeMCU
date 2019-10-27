@@ -4,7 +4,7 @@
 - alias: setze wassertemp soll input
   trigger:
     platform: mqtt
-    topic: 'gettempwwsoll'
+    topic: 'VITOWIFI/gettempwwsoll'
   action:
     service: input_number.set_value
     data_template:
@@ -30,7 +30,7 @@
 - alias: setze HK1 Temp Soll input
   trigger:
     platform: mqtt
-    topic: 'gettempraumnorsollm1'
+    topic: 'VITOWIFI/gettempraumnorsollm1'
   action:
     service: input_number.set_value
     data_template:
@@ -56,7 +56,7 @@
 - alias: setze HK1 RedTemp Soll input
   trigger:
     platform: mqtt
-    topic: 'gettempraumredsollm1'
+    topic: 'VITOWIFI/gettempraumredsollm1'
   action:
     service: input_number.set_value
     data_template:
@@ -82,7 +82,7 @@
 - alias: setze BetriebArt input
   trigger:
     platform: mqtt
-    topic: 'getbetriebartm1'
+    topic: 'VITOWIFI/getbetriebartm1'
   action:
     service: input_number.set_value
     data_template:
@@ -108,7 +108,7 @@
 - alias: setze NeigungA1 input
   trigger:
     platform: mqtt
-    topic: 'getneigungkennliniea1'
+    topic: 'VITOWIFI/getneigungkennliniea1'
   action:
     service: input_number.set_value
     data_template:
@@ -134,7 +134,7 @@
 - alias: setze NiveauA1 input
   trigger:
     platform: mqtt
-    topic: 'getniveaukennliniea1'
+    topic: 'VITOWIFI/getniveaukennliniea1'
   action:
     service: input_number.set_value
     data_template:
