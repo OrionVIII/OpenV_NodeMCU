@@ -12,4 +12,6 @@ work based on [Schnup89/OpenV_NodeMCU](https://github.com/Schnup89/OpenV_NodeMCU
 
 I used the Optolink adapter here: [saidlm/Viessmann-optical-interface](https://github.com/saidlm/Viessmann-optical-interface)
 
+I used most addresses out of this [document](https://connectivity.viessmann.com/content/dam/vi-micro/CONNECTIVITY/Vitogate/Vitogate-200/7542150-KNX/Datenpunktlisten/DE/20CB_Vitodens_2xx_W_F_B2HA_B2KA_B2LA_B2TA_B2SA_Vitotronic_200_HO1B.pdf/_jcr_content/renditions/original.media_file.download_attachment.file/20CB_Vitodens_2xx_W_F_B2HA_B2KA_B2LA_B2TA_B2SA_Vitotronic_200_HO1B.pdf)
+
 manual (in German): [OpenV-GitHub-Wiki](https://github.com/openv/openv/wiki/Bauanleitung-NodeMCU-WIFI---MQTT---HomeAssistant)
